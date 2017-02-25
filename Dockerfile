@@ -8,8 +8,4 @@ RUN apk -U add ca-certificates python python-dev py-pip build-base && \
 
 WORKDIR /locust
 
-ONBUILD ARG PATH_TO_LOCUST
-ONBUILD ADD $PATH_TO_LOCUST /locust
-ONBUILD RUN test -f requirements.txt && pip install -r requirements.txt; exit 0
-
 EXPOSE 8089
